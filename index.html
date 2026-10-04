@@ -98,6 +98,85 @@ a{color:inherit}button{font-family:inherit}
 }
 @media(max-width:820px){.stage{display:contents}}
 @media(prefers-reduced-motion:reduce){.n{animation:none!important;opacity:1}.anim .giant,.anim .line{animation:none}}
+
+/* ===== 下層 ===== */
+body{background:var(--ivory)}
+.after{position:relative;color:var(--plum);background:var(--ivory)}
+.sec{position:relative;max-width:1080px;margin:0 auto;padding:96px 22px}
+@media(min-width:900px){.sec{padding:128px 40px}}
+.kk{display:block;font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;font-size:20px;letter-spacing:.12em;color:#b0587a;margin-bottom:6px}
+.big{font-family:"Shippori Mincho",serif;font-weight:800;font-size:clamp(26px,4.6vw,52px);line-height:1.4;letter-spacing:.04em;margin-bottom:18px}
+.big em{font-style:normal;background:linear-gradient(transparent 68%,rgba(212,114,143,.4) 68%)}
+.ld{max-width:34em;color:#6e5766}
+.nt{font-size:12.5px;color:#7a6571;line-height:1.8;margin-top:14px}
+.js .fd{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .fd.in{opacity:1;transform:none}
+.nav{position:fixed;top:0;left:0;right:0;z-index:80;display:flex;align-items:center;justify-content:space-between;padding:8px 16px;background:rgba(255,246,239,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 3px 14px rgba(60,10,35,.16);transform:translateY(-110%);transition:transform .4s;color:var(--plum)}
+.nav.show{transform:none}
+.nav b{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:24px}
+.nav nav{display:none;gap:20px;font-size:13px;font-weight:700}.nav nav a{text-decoration:none}
+.nav .cta{min-height:40px;padding:6px 18px;font-size:13px;background:var(--rose1);color:#fff;box-shadow:none}
+@media(min-width:900px){.nav nav{display:flex}.nav{padding:8px 40px}}
+.btn2{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:12px 28px;background:var(--rose1);color:#fff;text-decoration:none;font-weight:700;letter-spacing:.08em;border-radius:999px;box-shadow:0 10px 24px rgba(168,69,106,.35);transition:transform .25s}
+.btn2::after{content:"→"}.btn2:hover{transform:translateY(-2px)}
+.btn2:focus-visible,.pill:focus-visible,.sw:focus-visible{outline:3px solid var(--plum);outline-offset:3px}
+
+/* 1 不安に答える */
+.worry{background:linear-gradient(160deg,#f6e4e6,#f0d3da)}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 22px}
+.pill{border:2px solid var(--rose1);background:#fff;color:var(--rose1);font-weight:700;font-size:14.5px;padding:8px 18px;border-radius:999px;cursor:pointer;transition:.2s}
+.pill[aria-pressed="true"]{background:var(--rose1);color:#fff;box-shadow:0 5px 0 #7d2e4e;transform:translateY(-2px)}
+.ans{background:#fff;border-radius:28px;padding:24px 24px;max-width:720px;box-shadow:0 14px 30px rgba(120,40,70,.14);min-height:132px}
+.ans b{display:block;font-family:"Shippori Mincho",serif;font-size:clamp(19px,2.4vw,26px);margin-bottom:6px}
+.ans p{color:#6e5766;font-size:15px}
+
+/* 2 デザイン（横スワイプ） */
+.rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 22px 20px;margin:0 -22px;-webkit-overflow-scrolling:touch}
+.rail::-webkit-scrollbar{height:6px}.rail::-webkit-scrollbar-thumb{background:#d9a5b6;border-radius:3px}
+.sw{flex:none;width:min(230px,66vw);scroll-snap-align:start;background:#fff;border:0;border-radius:26px;padding:14px 14px 18px;text-align:left;cursor:default;box-shadow:0 12px 26px rgba(120,40,70,.14)}
+.sw .nl{position:relative;height:210px;border-radius:999px 999px 18px 18px;overflow:hidden;margin-bottom:12px}
+.sw .nl::after{content:"";position:absolute;left:14%;top:5%;width:30%;height:40%;border-radius:50%;background:linear-gradient(160deg,rgba(255,255,255,.75),rgba(255,255,255,0));transform:rotate(14deg)}
+.sw .nl.m{background:radial-gradient(120% 90% at 50% 100%,#2c1428,#5a3250 60%,#7e4568)}
+.sw .nl.m::before{content:"";position:absolute;inset:-10% 0;background:linear-gradient(105deg,transparent calc(var(--mx2,50%) - 30%),rgba(255,226,250,.9) var(--mx2,50%),transparent calc(var(--mx2,50%) + 30%));mix-blend-mode:screen;filter:blur(2px)}
+.sw b{display:block;font-family:"Shippori Mincho",serif;font-size:18px}
+.sw span{display:block;font-size:13px;color:#6e5766;line-height:1.6;margin-top:2px}
+
+/* 3 流れ */
+.flow{background:var(--rose1);color:var(--ivory)}
+.flow .kk{color:var(--gold)}.flow .big em{background:linear-gradient(transparent 68%,rgba(240,207,154,.45) 68%)}
+.flow .ld{color:#fbe3ea}
+.st{list-style:none;counter-reset:s;display:grid;gap:14px;max-width:760px;margin-top:10px}
+.st li{counter-increment:s;display:grid;grid-template-columns:54px 1fr;gap:16px;align-items:start;background:rgba(255,246,239,.12);border:1px solid rgba(255,246,239,.35);border-radius:22px;padding:18px 20px}
+.st li::before{content:counter(s);width:54px;height:54px;border-radius:50%;background:var(--ivory);color:var(--rose1);display:grid;place-items:center;font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;font-size:26px}
+.st b{display:block;font-family:"Shippori Mincho",serif;font-size:19px}
+.st span{font-size:14.5px;opacity:.95;line-height:1.8}
+.flow .nt{color:#fbe3ea}
+
+/* 4 フィルイン／注意事項（開閉） */
+.acc details{border-bottom:1px solid #e3cdd3}
+.acc details:first-of-type{border-top:1px solid #e3cdd3}
+.acc summary{list-style:none;cursor:pointer;padding:20px 44px 20px 0;position:relative;font-family:"Shippori Mincho",serif;font-weight:700;font-size:18px;min-height:56px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";position:absolute;right:6px;top:14px;font-size:28px;color:var(--rose1);transition:transform .25s}
+.acc details[open] summary::after{transform:rotate(45deg)}
+.acc .bd{padding:0 0 20px;color:#6e5766;font-size:15px;max-width:40em}
+.tbd{display:inline-block;margin-top:8px;background:#fff;border:1.5px dashed var(--rose2);border-radius:14px;padding:6px 14px;font-size:13px;color:#7a4a60}
+
+/* 5 アクセス */
+.acs{background:linear-gradient(160deg,#f6e4e6,#f0d3da)}
+.acinfo{display:grid;grid-template-columns:100px 1fr;max-width:660px;border-top:1px solid #dcb7c3;margin-top:8px;text-align:left}
+.acinfo dt,.acinfo dd{padding:14px 0;border-bottom:1px solid #dcb7c3;font-size:15px}
+.acinfo dt{font-weight:700;color:#a8456a}
+.acinfo a{color:#a8456a;font-weight:700}
+
+/* 6 ラスト */
+.fin{text-align:center;color:var(--ivory);padding:100px 22px 130px;background:radial-gradient(90% 70% at 70% 30%,#d97a95 0,transparent 60%),linear-gradient(160deg,#d4728f,#a8456a 60%,#8f3158)}
+.fin h2{font-family:"Shippori Mincho",serif;font-weight:800;font-size:clamp(28px,5.4vw,60px);line-height:1.4;margin-bottom:14px}
+.fin p{max-width:30em;margin:0 auto 24px;opacity:.96}
+.fin .cta{display:inline-flex}
+.fin .ps{margin-top:26px;font-size:13.5px;opacity:.92}
+footer.ft{background:var(--plum);color:#e8d6dc;text-align:center;font-size:12px;padding:14px 20px 24px}
+@media(prefers-reduced-motion:reduce){.js .fd{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -117,6 +196,84 @@ a{color:inherit}button{font-family:inherit}
   <p class="note">※ 色・デザインはイメージ図です</p>
   <div class="foot"><a class="cta" href="https://lin.ee/bV9vKXf" target="_blank" rel="noopener">LINEで、予約・相談する</a><p class="info">宝塚駅 徒歩10分｜宝塚歌劇場近く<br>初めての方も安心です</p></div>
 </header>
+
+<div class="after" id="after">
+<div class="nav" id="nav"><b>Laule'a</b><nav aria-label="ページ内メニュー"><a href="#worry">安心して</a><a href="#design">デザイン</a><a href="#flow">ご予約の流れ</a><a href="#faq">はじめての方へ</a><a href="#access">アクセス</a></nav><a class="cta" href="https://lin.ee/bV9vKXf" target="_blank" rel="noopener">LINEで予約</a></div>
+
+<section class="worry" id="worry"><div class="sec">
+  <span class="kk fd">for the first time</span>
+  <h2 class="big fd">こんな<em>不安</em>、ありませんか。</h2>
+  <p class="ld fd">当てはまるものを、えらんでみてください。</p>
+  <div class="pills fd" id="pills" role="group" aria-label="不安をえらぶ">
+    <button class="pill" aria-pressed="true">すぐ取れてしまう</button>
+    <button class="pill" aria-pressed="false">爪が薄くて割れやすい</button>
+    <button class="pill" aria-pressed="false">手に自信がない</button>
+    <button class="pill" aria-pressed="false">人見知り・緊張する</button>
+    <button class="pill" aria-pressed="false">はじめてで不安</button>
+  </div>
+  <div class="ans fd" id="ans" aria-live="polite"><b>持ちのいいネイルを、ていねいに。</b><p>「1ヶ月持ったことがない」という方も、まずはご相談ください。爪の状態を見ながら、持ちのいい施術を心がけています。</p></div>
+  <p class="nt fd">※ お悩みの言葉は、Instagramの投稿にある「こんな方におすすめ」をもとにした下書きです。実際の対応内容は、お店にご確認のうえ整えます。</p>
+</div></section>
+
+<section id="design"><div class="sec">
+  <span class="kk fd">design</span>
+  <h2 class="big fd">デザインは、<em>5つの方向</em>から。</h2>
+  <p class="ld fd">大人ニュアンス・シンプルネイルが中心です。横にスライドして、見てみてください。</p>
+  <div class="rail fd" tabindex="0" aria-label="デザインの例（横にスクロール）">
+    <div class="sw"><div class="nl" style="background:linear-gradient(165deg,#f6d9d6,#e6a9ab)"></div><b>ワンカラー</b><span>色をひとつ。爪をきれいに見せる、いちばんシンプルな形。</span></div>
+    <div class="sw"><div class="nl m" id="mag"></div><b>マグネット</b><span>角度で光が動く、奥行きのある仕上がり。（指でなぞると、光が動きます）</span></div>
+    <div class="sw"><div class="nl" style="background:conic-gradient(from 210deg at 50% 60%,#f6c8d8,#c9d6f6,#d8f1e6,#f7e3b5,#f6c8d8)"></div><b>フラッシュミックス</b><span>光の当たり方で、色が変わります。</span></div>
+    <div class="sw"><div class="nl" style="background:linear-gradient(170deg,#f1e2d5,#e0c6b2)"></div><b>シンプルデザイン</b><span>お仕事中も浮かない、控えめなデザイン。</span></div>
+    <div class="sw"><div class="nl" style="background:radial-gradient(60% 50% at 30% 30%,#fff 0,transparent 60%),radial-gradient(70% 60% at 70% 75%,#cfa6b8,transparent 70%),#efe3e6"></div><b>大人ニュアンス</b><span>やわらかな色のにじみで、手元をやさしく。</span></div>
+  </div>
+  <p class="nt fd">※ 色・デザインはイメージ図です。実際の作品は、お店のお写真に差し替えます。お持ち込みデザインのご相談の注意点は、下の「はじめての方へ」をご覧ください。</p>
+</div></section>
+
+<section class="flow" id="flow"><div class="sec">
+  <span class="kk fd">flow</span>
+  <h2 class="big fd">ご予約は、<em>LINE</em>から。</h2>
+  <p class="ld fd">はじめての方は、注意事項を確認してから、ご予約をお願いします。</p>
+  <ol class="st">
+    <li class="fd"><div><b>「はじめての方へ」を、読む</b><span>下の「はじめての方へ」で、注意事項を確認します。</span></div></li>
+    <li class="fd"><div><b>LINEで、空き状況を確認</b><span>ご予約の空き状況は、LINEかDMで、お知らせしています。</span></div></li>
+    <li class="fd"><div><b>ご予約・ご来店</b><span>宝塚駅から徒歩10分、宝塚歌劇場の近くです。お気軽にお越しください。</span></div></li>
+  </ol>
+  <p class="nt fd">※ 流れは、Instagramのご案内をもとにしています。</p>
+  <div class="fd" style="margin-top:22px"><a class="cta" style="display:inline-flex" href="https://lin.ee/bV9vKXf" target="_blank" rel="noopener">LINEで、予約・相談する</a></div>
+</div></section>
+
+<section class="acc" id="faq"><div class="sec">
+  <span class="kk fd">guide</span>
+  <h2 class="big fd">はじめての方へ。</h2>
+  <div class="fd">
+    <details open><summary>フィルインって、なんですか？</summary><div class="bd">ジェルを毎回すべて外さず、伸びた根元の部分を整えて、続けていく方法です。爪の状態やデザインによって、向き不向きがあります。気になる方は、ご予約のときにご相談ください。<br><span class="tbd">実際の手順・料金は、お店にご確認のうえ掲載します</span></div></details>
+    <details><summary>遅刻・予約の変更について</summary><div class="bd">ご予約の遅刻や変更については、お店の決まりがあります。<br><span class="tbd">お店の注意事項を、こちらに掲載します（Instagramのハイライトにあります）</span></div></details>
+    <details><summary>お持ち込みデザインについて</summary><div class="bd">お持ち込みデザインの、ご相談の際の注意点があります。<br><span class="tbd">お店の注意事項を、こちらに掲載します</span></div></details>
+    <details><summary>予約の空き状況は、どこで分かりますか？</summary><div class="bd">LINEまたはDMで、お知らせしています。ご予約の際は、公式LINEからどうぞ。</div></details>
+    <details><summary>ジェルネイルが初めてでも、大丈夫ですか？</summary><div class="bd">大丈夫です。「ジェルネイルが初めての方も安心して通えるサロン」です。緊張する方も、人見知りの方も、お気軽にご相談ください。</div></details>
+  </div>
+</div></section>
+
+<section class="acs" id="access"><div class="sec">
+  <span class="kk fd">access</span>
+  <h2 class="big fd">宝塚駅から、<em>徒歩10分</em>。</h2>
+  <dl class="acinfo fd">
+    <dt>サロン名</dt><dd>Laule'a（ラウレア）</dd>
+    <dt>所在地</dt><dd>兵庫県宝塚市宮の町3-14 205<br><a href="https://www.google.com/maps/search/?api=1&query=%E5%85%B5%E5%BA%AB%E7%9C%8C%E5%AE%9D%E5%A1%9A%E5%B8%82%E5%AE%AE%E3%81%AE%E7%94%BA3-14" target="_blank" rel="noopener">地図を開く →</a></dd>
+    <dt>アクセス</dt><dd>宝塚駅から徒歩10分（宝塚歌劇場の近く）</dd>
+    <dt>予約</dt><dd>公式LINE（空き状況もLINEで）</dd>
+  </dl>
+  <p class="nt fd">※ 住所は地図の公開情報、アクセスはInstagramの記載をもとにしています。営業時間・定休日は、お店にご確認のうえ掲載します。</p>
+</div></section>
+
+<section class="fin" id="fin">
+  <h2 class="fd">手元から、<br>やさしく、きれいに。</h2>
+  <p class="fd">ご予約・ご相談は、公式LINEで。はじめての方も、お気軽にどうぞ。</p>
+  <a class="cta fd" href="https://lin.ee/bV9vKXf" target="_blank" rel="noopener">LINEで、予約・相談する</a>
+  <p class="ps fd">追伸。「手に自信がない」「緊張する」でも大丈夫です。ご予約のときに、ひとこと添えていただければ、当日が、もっと安心です。</p>
+</section>
+<footer class="ft">色・デザインはイメージ図です。営業時間・料金・注意事項などは、お店にご確認のうえ掲載します。</footer>
+</div>
 <script>
 (function(){
   var root=document.documentElement,hero=document.getElementById("hero"),cap=document.getElementById("cap");
@@ -130,6 +287,25 @@ a{color:inherit}button{font-family:inherit}
   function pt(e){var r=hero.getBoundingClientRect();set((e.clientX-r.left)/r.width*100);used=true}
   hero.addEventListener("pointermove",pt);hero.addEventListener("pointerdown",pt);
   if(!reduce&&visible){var loop=function(now){if(!used)set(50+40*Math.sin((now-t0)/1000*.8));requestAnimationFrame(loop)};requestAnimationFrame(loop)}
+
+
+  /* ---- 下層 ---- */
+  var nav=document.getElementById("nav");
+  var onS=function(){nav.classList.toggle("show",window.scrollY>hero.offsetHeight*.7)};
+  window.addEventListener("scroll",onS,{passive:true});onS();
+  var fds=document.querySelectorAll(".fd");
+  if("IntersectionObserver" in window&&visible){root.classList.add("js");
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{rootMargin:"0px 0px -8% 0px"});
+    fds.forEach(function(el){io.observe(el)});setTimeout(function(){fds.forEach(function(el){el.classList.add("in")})},5000)}
+  var A=[["持ちのいいネイルを、ていねいに。","「1ヶ月持ったことがない」という方も、まずはご相談ください。爪の状態を見ながら、持ちのいい施術を心がけています。"],
+         ["薄い爪も、ご相談ください。","爪が薄くて割れやすい方も、ご相談いただけます。爪の状態に合わせて、ご提案します。"],
+         ["手に自信がなくても、大丈夫です。","手や爪の形に自信がなくて、人前で出すのがイヤ、という方も、お気軽に。きれいな形に整えるお手伝いをします。"],
+         ["小さなサロンで、ゆっくり。","人見知りの方、大型店が苦手な方も、プライベートな空間で、緊張せずにお過ごしいただけるよう心がけています。"],
+         ["はじめてでも、安心です。","ジェルネイルが初めての方も、安心して通えるサロンです。ご予約の前に、LINEで、ご相談もできます。"]];
+  var pills=[].slice.call(document.querySelectorAll("#pills .pill")),ans=document.getElementById("ans");
+  pills.forEach(function(b,i){b.addEventListener("click",function(){pills.forEach(function(x,k){x.setAttribute("aria-pressed",k===i?"true":"false")});ans.innerHTML="<b>"+A[i][0]+"</b><p>"+A[i][1]+"</p>"})});
+  var mag=document.getElementById("mag");
+  if(mag){mag.addEventListener("pointermove",function(e){var r=mag.getBoundingClientRect();mag.style.setProperty("--mx2",((e.clientX-r.left)/r.width*100)+"%")})}
 
   /* 爪をタップすると、ぴょんと跳ねて、デザイン名が出る */
   [].slice.call(document.querySelectorAll(".n")).forEach(function(n){
