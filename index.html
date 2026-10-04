@@ -83,6 +83,20 @@ a{color:inherit}button{font-family:inherit}
   .cap{display:none}
   .note{display:none}
 }
+
+@media(min-width:821px){
+  .hero{display:flex;flex-direction:column;padding-top:clamp(84px,11vh,110px)}
+  .stage{position:relative;flex:1 1 0;min-height:0;container-type:size}
+  .giant{top:50%;font-size:min(90cqh,38cqw)}
+  .line{top:50%}
+  .run{position:relative;left:auto;right:auto;bottom:auto;flex:none;margin-top:clamp(6px,1.4vh,16px)}
+  .n{height:clamp(58px,13vh,128px)}
+  .n:nth-child(even){height:clamp(50px,11vh,108px)}
+  .cap{position:static;transform:none;text-align:center;margin:8px 0 0;flex:none}
+  .foot{position:relative;flex:none}
+  .note{bottom:clamp(64px,10vh,96px)}
+}
+@media(max-width:820px){.stage{display:contents}}
 @media(prefers-reduced-motion:reduce){.n{animation:none!important;opacity:1}.anim .giant,.anim .line{animation:none}}
 </style>
 </head>
@@ -90,9 +104,11 @@ a{color:inherit}button{font-family:inherit}
 <div class="demo">これはLaule'a様向けに作ったデモ（トップページのみ・非公開の見本）です。内容はInstagramの公開情報をもとにしています。</div>
 <header class="hero" id="hero">
   <div class="top"><div class="logo">Laule'a<small>PRIVATE NAIL SALON ｜ 宝塚</small></div><div class="sub">大人ニュアンス・シンプルネイル<br>フィルイン施術</div></div>
+  <div class="stage">
   <div class="giant" aria-hidden="true" data-c="手">手</div>
   <h1 class="line l" id="h1a">手に自信がなくても、</h1>
   <p class="line r"><em>きれい</em>は作れます。</p>
+  </div>
   <div class="run" id="run" role="group" aria-label="10本の爪のデザイン例。タップすると跳ねます">
     <button class="n c1" style="--i:0" data-t="one color"></button><button class="n c2" style="--i:1" data-t="magnet"></button><button class="n c3" style="--i:2" data-t="flash mix"></button><button class="n c4" style="--i:3" data-t="simple"></button><button class="n c5" style="--i:4" data-t="nuance"></button>
     <button class="n c1" style="--i:5" data-t="one color"></button><button class="n c2" style="--i:6" data-t="magnet"></button><button class="n c3" style="--i:7" data-t="flash mix"></button><button class="n c4" style="--i:8" data-t="simple"></button><button class="n c5" style="--i:9" data-t="nuance"></button>
