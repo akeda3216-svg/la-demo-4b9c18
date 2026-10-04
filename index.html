@@ -177,6 +177,15 @@ body{background:var(--ivory)}
 .fin .ps{margin-top:26px;font-size:13.5px;opacity:.92}
 footer.ft{background:var(--plum);color:#e8d6dc;text-align:center;font-size:12px;padding:14px 20px 24px}
 @media(prefers-reduced-motion:reduce){.js .fd{opacity:1;transform:none;transition:none}}
+
+.emb{margin-top:34px}
+.emb h3{font-family:"Shippori Mincho",serif;font-weight:800;font-size:clamp(20px,2.6vw,28px);margin-bottom:6px}
+.emb .grid{display:grid;gap:16px;margin-top:14px}
+@media(min-width:820px){.emb .grid{grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}}
+.emb .cell{min-height:120px;align-self:start;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 24px rgba(120,40,70,.12)}
+.emb .cell .ig{display:block;padding:34px 16px;text-align:center;color:#a8456a;font-weight:700;text-decoration:none;font-size:14px}
+.emb .cell,.emb .cell>div{height:auto!important}
+.emb iframe{max-width:100%!important;min-width:0!important;margin:0!important;width:100%!important}
 </style>
 </head>
 <body>
@@ -226,7 +235,17 @@ footer.ft{background:var(--plum);color:#e8d6dc;text-align:center;font-size:12px;
     <div class="sw"><div class="nl" style="background:linear-gradient(170deg,#f1e2d5,#e0c6b2)"></div><b>シンプルデザイン</b><span>お仕事中も浮かない、控えめなデザイン。</span></div>
     <div class="sw"><div class="nl" style="background:radial-gradient(60% 50% at 30% 30%,#fff 0,transparent 60%),radial-gradient(70% 60% at 70% 75%,#cfa6b8,transparent 70%),#efe3e6"></div><b>大人ニュアンス</b><span>やわらかな色のにじみで、手元をやさしく。</span></div>
   </div>
-  <p class="nt fd">※ 色・デザインはイメージ図です。実際の作品は、お店のお写真に差し替えます。お持ち込みデザインのご相談の注意点は、下の「はじめての方へ」をご覧ください。</p>
+  <div class="emb fd" id="emb">
+    <h3>実際の作品（Instagramより）</h3>
+    <p class="ld">お店のInstagramの投稿を、そのまま表示しています。</p>
+    <div class="grid" id="embg">
+      <div class="cell"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DeB8Qq2n44Z/" data-instgrm-version="14" style="width:100%;margin:0;background:#fff;border:0"><a class="ig" href="https://www.instagram.com/p/DeB8Qq2n44Z/" target="_blank" rel="noopener">Instagramで、見る →</a></blockquote></div>
+      <div class="cell"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Dd-nnfUCVp7/" data-instgrm-version="14" style="width:100%;margin:0;background:#fff;border:0"><a class="ig" href="https://www.instagram.com/p/Dd-nnfUCVp7/" target="_blank" rel="noopener">Instagramで、見る →</a></blockquote></div>
+      <div class="cell"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Dd6UJm_n-5o/" data-instgrm-version="14" style="width:100%;margin:0;background:#fff;border:0"><a class="ig" href="https://www.instagram.com/p/Dd6UJm_n-5o/" target="_blank" rel="noopener">Instagramで、見る →</a></blockquote></div>
+    </div>
+    <p class="nt">※ 写真の権利は、お店にあります。Instagramの公式の埋め込み機能で表示しています（写真のコピーは、サイトに保存していません）。正式版では、お店からお預かりしたお写真に差し替えます。</p>
+  </div>
+  <p class="nt fd">※ 上のカードの色・デザインはイメージ図です。お持ち込みデザインのご相談の注意点は、下の「はじめての方へ」をご覧ください。</p>
 </div></section>
 
 <section class="flow" id="flow"><div class="sec">
@@ -304,6 +323,8 @@ footer.ft{background:var(--plum);color:#e8d6dc;text-align:center;font-size:12px;
          ["はじめてでも、安心です。","ジェルネイルが初めての方も、安心して通えるサロンです。ご予約の前に、LINEで、ご相談もできます。"]];
   var pills=[].slice.call(document.querySelectorAll("#pills .pill")),ans=document.getElementById("ans");
   pills.forEach(function(b,i){b.addEventListener("click",function(){pills.forEach(function(x,k){x.setAttribute("aria-pressed",k===i?"true":"false")});ans.innerHTML="<b>"+A[i][0]+"</b><p>"+A[i][1]+"</p>"})});
+  var emb=document.getElementById("emb");
+  if(emb&&"IntersectionObserver" in window){var eo=new IntersectionObserver(function(es){if(es[0].isIntersecting){eo.disconnect();var sc=document.createElement("script");sc.async=true;sc.src="https://www.instagram.com/embed.js";document.body.appendChild(sc)}},{rootMargin:"300px"});eo.observe(emb)}else if(emb){var sc=document.createElement("script");sc.async=true;sc.src="https://www.instagram.com/embed.js";document.body.appendChild(sc)}
   var mag=document.getElementById("mag");
   if(mag){mag.addEventListener("pointermove",function(e){var r=mag.getBoundingClientRect();mag.style.setProperty("--mx2",((e.clientX-r.left)/r.width*100)+"%")})}
 
